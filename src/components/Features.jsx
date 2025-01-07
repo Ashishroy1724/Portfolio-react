@@ -38,7 +38,7 @@ export const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
-export const BentoCard = ({ src, title, description, isComingSoon }) => {
+export const BentoCard = ({ src, title, description, VisitSite }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
@@ -58,11 +58,9 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 
   return (
     <div className="relative size-full">
-      <video
+      <img
         src={src}
-        loop
-        muted
-        autoPlay
+        alt={title}
         className="absolute left-0 top-0 size-full object-cover object-center"
       />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
@@ -73,13 +71,13 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
           )}
         </div>
 
-        {isComingSoon && (
+        {VisitSite && (
           <div
             ref={hoverButtonRef}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20"
+            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-white px-5 py-2 text-xs uppercase text-black"
           >
             {/* Radial gradient hover effect */}
             <div
@@ -90,7 +88,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
               }}
             />
             <TiLocationArrow className="relative z-20" />
-            <p className="relative z-20">coming soon</p>
+            <p className="relative z-20">Visit Site</p>
           </div>
         )}
       </div>
@@ -114,54 +112,70 @@ const Features = () => (
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
-          src="videos/feature-1.mp4"
+           src="videos/feature-1.mp4"
           title={
             <>
               radia<b>n</b>t
             </>
           }
           description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-          isComingSoon
+          VisitSite
         />
       </BentoTilt>
 
       <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+      <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2 relative overflow-hidden">
+      <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
           <BentoCard
-            src="videos/feature-2.mp4"
+            src="img/Website Image 1.png"
             title={
               <>
-                zig<b>m</b>a
+                <b className="text-white relative z-20">E-commerce Website</b>
               </>
             }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-            isComingSoon
+            description={
+              <span className="text-white relative z-20">
+                A cutting-edge e-commerce website featuring seamless shopping experiences.
+              </span>
+            }
+            VisitSite
           />
-        </BentoTilt>
+      </BentoTilt>
+
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+        <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
           <BentoCard
-            src="videos/feature-3.mp4"
+            src="img/Todolist.png"
             title={
               <>
-                n<b>e</b>xus
+                <b className="text-white relative z-20">To-do List</b>
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
-            isComingSoon
+            description={
+              <span className="text-white relative z-20">
+                A to-do list website made with the help HTML, CSS, Javascript.
+              </span>
+            }
+            VisitSite
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-          <BentoCard
-            src="videos/feature-4.mp4"
+        <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+        <BentoCard
+            src="img/Website Image - 4.png"
             title={
               <>
-                az<b>u</b>l
+                <b className="text-white relative z-20">Money Tracker</b>
               </>
             }
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
-            isComingSoon
+            description={
+              <span className="text-white relative z-20">
+                An innovative app for managing personal finances with stunning UI/UX.
+              </span>
+            }
+            VisitSite
           />
         </BentoTilt>
 
@@ -175,15 +189,31 @@ const Features = () => (
           </div>
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_2">
-          <video
-            src="videos/feature-5.mp4"
-            loop
-            muted
-            autoPlay
-            className="size-full object-cover object-center"
+        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+        <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+        <BentoCard
+            src="img/Website Image - 8.png"
+            title={
+              <>
+                <b className="text-white relative z-20">Figma Design</b>
+              </>
+            }
+            description={
+              <span className="text-white relative z-20">
+                A food delivery app designed with Figma to enhance user experience.
+              </span>
+            }
+            VisitSite
           />
         </BentoTilt>
+
+        {/* <BentoTilt className="bento-tilt_2">
+          <img
+            src="images/feature-5.jpg"
+            alt="Feature 5"
+            className="size-full object-cover object-center"
+          />
+        </BentoTilt> */}
       </div>
     </div>
   </section>
