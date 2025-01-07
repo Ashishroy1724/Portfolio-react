@@ -38,7 +38,7 @@ export const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
-export const BentoCard = ({ src, title, description, VisitSite }) => {
+export const BentoCard = ({ src, title, description, VisitSite, link }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
@@ -63,6 +63,15 @@ export const BentoCard = ({ src, title, description, VisitSite }) => {
         alt={title}
         className="absolute left-0 top-0 size-full object-cover object-center"
       />
+      <video
+        src={src}
+        alt={title}
+        className="absolute left-0 top-0 size-full object-cover object-center"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
         <div>
           <h1 className="bento-title special-font">{title}</h1>
@@ -78,6 +87,7 @@ export const BentoCard = ({ src, title, description, VisitSite }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-white px-5 py-2 text-xs uppercase text-black"
+            onClick={() => window.open(link, "_blank")}
           >
             {/* Radial gradient hover effect */}
             <div
@@ -104,28 +114,27 @@ const Features = () => (
           Explore My Web Development Journey
         </p>
         <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          Dive into a curated selection of my projects, 
-          where creativity meets technology, offering innovative solutions and seamless user experiences across 
+          Dive into a curated selection of my projects,
+          where creativity meets technology, offering innovative solutions and seamless user experiences across
           diverse platforms and technologies.
         </p>
       </div>
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
-           src="videos/feature-1.mp4"
+          src="videos/feature-1.mp4"
           title={
             <>
-              radia<b>n</b>t
+              Pro<b>Jects</b>
             </>
           }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-          VisitSite
+          description="A showcase of my projects, where creativity meets technology to build innovative solutions and seamless user experiences across various platforms."
         />
       </BentoTilt>
 
       <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-      <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2 relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2 relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
           <BentoCard
             src="img/Website Image 1.png"
             title={
@@ -139,12 +148,12 @@ const Features = () => (
               </span>
             }
             VisitSite
+            link="https://fragranceofperfume.com/"
           />
-      </BentoTilt>
-
+        </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-        <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
           <BentoCard
             src="img/Todolist.png"
             title={
@@ -158,12 +167,13 @@ const Features = () => (
               </span>
             }
             VisitSite
+            link="https://ashishroy1724.github.io/to-do-list.github.io/"
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-        <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
-        <BentoCard
+          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+          <BentoCard
             src="img/Website Image - 4.png"
             title={
               <>
@@ -176,6 +186,7 @@ const Features = () => (
               </span>
             }
             VisitSite
+            link="https://ashishroy1724.github.io/finance-manager.github.io/"
           />
         </BentoTilt>
 
@@ -190,8 +201,8 @@ const Features = () => (
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-        <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
-        <BentoCard
+          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+          <BentoCard
             src="img/Website Image - 8.png"
             title={
               <>
@@ -204,16 +215,9 @@ const Features = () => (
               </span>
             }
             VisitSite
+            link="https://www.figma.com/design/zssyr9XmKmsraEsLCOFcv2/Food-Delivery-App?node-id=0-1&t=FihDTXcHy9CfDA4v-1"
           />
         </BentoTilt>
-
-        {/* <BentoTilt className="bento-tilt_2">
-          <img
-            src="images/feature-5.jpg"
-            alt="Feature 5"
-            className="size-full object-cover object-center"
-          />
-        </BentoTilt> */}
       </div>
     </div>
   </section>
