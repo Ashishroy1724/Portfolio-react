@@ -82,7 +82,7 @@ export const BentoCard = ({ src, title, description, VisitSite, link }) => {
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-white px-5 py-2 text-xs uppercase text-black"
+            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white"
             onClick={() => window.open(link, "_blank")}
           >
             {/* Radial gradient hover effect */}
@@ -130,16 +130,16 @@ const Features = () => (
 
       <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+          <div className="absolute inset-0 bg-white/50 z-10"></div> {/* Overlay */}
           <BentoCard
             src="img/Website Image 1.png"
             title={
               <>
-                <b className="text-white relative z-20">E-commerce Website</b>
+                <b className="text-black relative z-20">E-commerce Website</b>
               </>
             }
             description={
-              <span className="text-white relative z-20">
+              <span className="text-black relative z-20">
                 A cutting-edge e-commerce website featuring seamless shopping experiences.
               </span>
             }
@@ -149,16 +149,16 @@ const Features = () => (
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+        <div className="absolute inset-0 bg-white/50 z-10"></div> {/* Overlay */}
           <BentoCard
             src="img/Todolist.png"
             title={
               <>
-                <b className="text-white relative z-20">To-do List</b>
+                <b className="text-black relative z-20">To-do List</b>
               </>
             }
             description={
-              <span className="text-white relative z-20">
+              <span className="text-black relative z-20">
                 A to-do list website made with the help HTML, CSS, Javascript.
               </span>
             }
@@ -168,17 +168,17 @@ const Features = () => (
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
+        <div className="absolute inset-0 bg-white/50 z-10"></div> {/* Overlay */}
           <BentoCard
             src="img/Website Image - 4.png"
             title={
               <>
-                <b className="text-white relative z-20">Money Tracker</b>
+                <b className="text-black relative z-20">Money Tracker</b>
               </>
             }
             description={
-              <span className="text-white relative z-20">
-                An innovative app for managing personal finances with stunning UI/UX.
+              <span className="text-black relative z-20">
+                An innovative app for managing finances with stunning UI/UX.
               </span>
             }
             VisitSite
@@ -186,6 +186,42 @@ const Features = () => (
           />
         </BentoTilt>
 
+        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+        <div className="absolute inset-0 bg-white/50 z-10"></div> {/* Overlay */}
+          <BentoCard
+            src="img/Website Image - 8.png"
+            title={
+              <>
+                <b className="text-black relative z-20">Figma Design</b>
+              </>
+            }
+            description={
+              <span className="text-black relative z-20">
+                A food delivery app designed with Figma to enhance user experience.
+              </span>
+            }
+            VisitSite
+            link="https://www.figma.com/design/zssyr9XmKmsraEsLCOFcv2/Food-Delivery-App?node-id=0-1&t=FihDTXcHy9CfDA4v-1"
+          />
+        </BentoTilt>
+        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2 relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/50 z-10"></div> {/* Overlay */}
+          <BentoCard
+            src="img/image.png"
+            title={
+              <>
+                <b className="text-black relative z-20">Chat Application</b>
+              </>
+            }
+            description={
+              <span className="text-black relative z-20">
+                Real time chat application made using MERN and Socket.io.
+              </span>
+            }
+            VisitSite
+            link="https://chatapp-r6u0.onrender.com/"
+          />
+        </BentoTilt>
         <BentoTilt className="bento-tilt_2">
           <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
             <h1 className="bento-title special-font max-w-64 text-black">
@@ -194,25 +230,6 @@ const Features = () => (
 
             <TiLocationArrow className="m-5 scale-[5] self-end" />
           </div>
-        </BentoTilt>
-
-        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-          <div className="absolute inset-0 bg-black/50 z-10"></div> {/* Overlay */}
-          <BentoCard
-            src="img/Website Image - 8.png"
-            title={
-              <>
-                <b className="text-white relative z-20">Figma Design</b>
-              </>
-            }
-            description={
-              <span className="text-white relative z-20">
-                A food delivery app designed with Figma to enhance user experience.
-              </span>
-            }
-            VisitSite
-            link="https://www.figma.com/design/zssyr9XmKmsraEsLCOFcv2/Food-Delivery-App?node-id=0-1&t=FihDTXcHy9CfDA4v-1"
-          />
         </BentoTilt>
       </div>
     </div>

@@ -142,21 +142,6 @@ const Hero = () => {
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
               Turning Imagination into <br /> Interactive Web Experiences
             </p>
-
-            <Button
-              id="download-cv"
-              title="Download CV"
-              leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
-              onClick={() => {
-                const link = document.createElement('a'); // Create a temporary <a> element
-                link.href = '/resume.pdf'; // Path to your CV in the public folder
-                link.download = 'My_Resume.pdf'; // Provide a custom file name if desired
-                document.body.appendChild(link); // Append it to the DOM
-                link.click(); // Trigger the download
-                document.body.removeChild(link); // Remove it from the DOM
-              }}
-            />
           </div>
         </div>
       </div>

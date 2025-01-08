@@ -102,6 +102,7 @@ const FloatingImage = () => {
             </svg>
           </div>
         </div>
+        {/* Add a download CV button and when clicked download cv */}
       </div>
     </div>
   );
